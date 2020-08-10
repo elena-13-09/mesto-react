@@ -1,0 +1,18 @@
+@import url('./__zoom-container/popup__zoom-container.css');
+@import url('./__zoom-image/popup__zoom-image.css');
+@import url('./__zoom-title/popup__zoom-title.css');
+
+.popup {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s linear;
+}

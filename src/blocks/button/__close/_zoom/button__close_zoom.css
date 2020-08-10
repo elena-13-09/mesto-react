@@ -1,0 +1,12 @@
+.button__close_zoom {
+  top: 53px;
+}
+
+@media screen and (max-width: 600px) {
+  .button__close_zoom {
+    height: 23px;
+    width: 23px;
+    top: 63px;
+    right: -28px;
+  }
+}

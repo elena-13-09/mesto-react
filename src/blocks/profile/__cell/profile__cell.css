@@ -1,0 +1,4 @@
+.profile__cell {
+  display: flex;
+  align-items: flex-end;
+}
