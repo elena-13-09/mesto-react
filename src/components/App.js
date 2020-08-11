@@ -10,7 +10,7 @@ function App() {
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
   const [isZoomPopupOpen, setIsZoomPopupOpen] = React.useState(false);
-  const [selectedCard, setSelectedCard] = React.useState(false);
+  const [selectedCard, setSelectedCard] = React.useState();
 
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true);
@@ -52,57 +52,50 @@ function App() {
         name='profile'
         button='Сохранить'
         isOpen={isEditProfilePopupOpen}
-        onClose={closeAllPopups}
-        children={(
-          <>
-            <fieldset className="form__field">
-              <input className="form__input form__input_name" type="text" name="name" id="name-input"
-                placeholder="Имя" minLength="2" maxLength="40" pattern="^[A-Za-zА-ЯЁа-яё\s-]+$" required />
-              <span className="form__input-error" id="name-input-error"></span>
-              <input className="form__input form__input_profession" type="text" name="profession" id="profession-input"
-                placeholder="О себе" minLength="2" maxLength="200" required />
-              <span className="form__input-error" id="profession-input-error"></span>
-            </fieldset>
-          </>
-        )}
-      />
+        onClose={closeAllPopups}>
+        <fieldset className="form__field">
+          <input className="form__input form__input_name" type="text" name="name" id="name-input"
+            placeholder="Имя" minLength="2" maxLength="40" pattern="^[A-Za-zА-ЯЁа-яё\s-]+$" required
+          />
+          <span className="form__input-error" id="name-input-error"></span>
+          <input className="form__input form__input_profession" type="text" name="profession" id="profession-input"
+            placeholder="О себе" minLength="2" maxLength="200" required
+          />
+          <span className="form__input-error" id="profession-input-error"></span>
+        </fieldset>
+      </PopupWithForm>
 
       <PopupWithForm
         title='Новое место'
         name='image'
         button='Сохранить'
         isOpen={isAddPlacePopupOpen}
-        onClose={closeAllPopups}
-        children={(
-          <>
-            <fieldset className="form__field">
-              <input className="form__input form__input_name-image" type="text" name="name" id="image-input"
-                placeholder="Название" minLength="1" maxLength="30" pattern="^[A-Za-zА-ЯЁа-яё\s-]+$" required />
-              <span className="form__input-error" id="image-input-error"></span>
-              <input className="form__input form__input_link-image" type="url" name="link" id="link-input"
-                placeholder="Ссылка на картинку" required />
-              <span className="form__input-error" id="link-input-error"></span>
-            </fieldset>
-          </>
-        )}
-      />
+        onClose={closeAllPopups}>
+        <fieldset className="form__field">
+          <input className="form__input form__input_name-image" type="text" name="name" id="image-input"
+            placeholder="Название" minLength="1" maxLength="30" pattern="^[A-Za-zА-ЯЁа-яё\s-]+$" required
+          />
+          <span className="form__input-error" id="image-input-error"></span>
+          <input className="form__input form__input_link-image" type="url" name="link" id="link-input"
+            placeholder="Ссылка на картинку" required
+          />
+          <span className="form__input-error" id="link-input-error"></span>
+        </fieldset>
+      </PopupWithForm>
 
       <PopupWithForm
         title='Обновить аватар'
         name='avatar'
         button='Создать'
         isOpen={isEditAvatarPopupOpen}
-        onClose={closeAllPopups}
-        children={(
-          <>
-            <fieldset className="form__field">
-              <input className="form__input form__input_link-avatar" type="url" name="link" id="link-input"
-                placeholder="Ссылка на картинку" required />
-              <span className="form__input-error" id="link-input-error"></span>
-            </fieldset>
-          </>
-        )}
-      />
+        onClose={closeAllPopups}>
+        <fieldset className="form__field">
+          <input className="form__input form__input_link-avatar" type="url" name="link" id="link-input"
+            placeholder="Ссылка на картинку" required
+          />
+          <span className="form__input-error" id="link-input-error"></span>
+        </fieldset>
+      </PopupWithForm>
 
       <PopupWithForm
         title='Вы уверены?'

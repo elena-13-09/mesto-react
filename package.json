@@ -2,6 +2,8 @@
   "name": "mesto-react",
   "version": "0.1.0",
   "private": true,
+  "description": "Учебный проект, выполненный на курсе Вэб-разработчик от Яндекс.Практикум",
+  "author": "Elena Goreva",
   "homepage": "https://elena-13-09.github.io/mesto-react/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

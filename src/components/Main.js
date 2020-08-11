@@ -1,8 +1,8 @@
 import React from 'react';
-import api from '../utils/Api';
+import api from '../utils/api';
 import Card from './Card';
 
-function Main(props) {
+function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick }) {
     const [userName, setUserName] = React.useState();
     const [userDescription, setUserDescription] = React.useState();
     const [userAvatar, setUserAvatar] = React.useState();
@@ -30,23 +30,23 @@ function Main(props) {
             <section className="profile">
                 <div className="profile__avatar-cell">
                     <img className="profile__avatar" alt="Аватарка" src={userAvatar} />
-                    <div className="profile__avatar-edit" onClick={props.onEditAvatar}></div>
+                    <div className="profile__avatar-edit" onClick={onEditAvatar}></div>
                 </div>
                 <div className="profile__info">
                     <div className="profile__cell">
                         <h1 className="profile__name">{userName}</h1>
-                        <button className="profile__edit-button" onClick={props.onEditProfile} type="button"></button>
+                        <button className="profile__edit-button" onClick={onEditProfile} type="button"></button>
                     </div>
                     <p className="profile__profession">{userDescription}</p>
                 </div>
-                <button className="profile__add-button" onClick={props.onAddPlace} type="button"></button>
+                <button className="profile__add-button" onClick={onAddPlace} type="button"></button>
             </section>
             <section className="elements">
                 {cards.map((item) => (
                     <Card
                         key={item._id}
                         card={item}
-                        onCardClick={props.onCardClick}
+                        onCardClick={onCardClick}
                     />
                 ))}
             </section>
