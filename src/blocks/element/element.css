@@ -3,6 +3,7 @@
 @import url('./__title/element__title.css');
 @import url('./__cell/element__cell.css');
 @import url('./__trash/element__trash.css');
+@import url('./__trash/_hidden/element__trash_hidden.css');
 @import url('./__like-number/element__like-number.css');
 @import url('./__like/_active/element__like_active.css');
 
