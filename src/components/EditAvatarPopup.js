@@ -8,13 +8,12 @@ function EditAvatarPopup(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-
     props.onUpdateAvatar({
       avatar: avatarRef.current.value,
     });
   }
 
-React.useEffect(() => {
+  React.useEffect(() => {
     avatarRef.current.value = '';
   }, [currentUser]);
 
@@ -31,7 +30,6 @@ React.useEffect(() => {
         className="form__field">
         <input
           className="form__input form__input_link-avatar"
-
           ref={avatarRef}
           type="url"
           name="link"
